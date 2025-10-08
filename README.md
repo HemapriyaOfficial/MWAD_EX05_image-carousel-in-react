@@ -40,8 +40,65 @@ Clean up the interval when the component unmounts using clearInterval to prevent
 
 ## PROGRAM
 
+Gallery.jsx
+
+```
+import React from "react";
+import "./gallery.css";
+
+function ImageCarousel({ image }) {
+  return (
+    <div className="carousel-container">
+      <img src={image} alt="Carousel" />
+    </div>
+  );
+}
+
+export default ImageCarousel;
+
+```
+
+Gallery.css
+```
+.carousel-container {
+  width: 700px;
+  height: 500px;
+  margin: 100px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+```
+
+App.jsx
+```
+import ImageCarousel from "./gallery";
+import c1 from "./assets/c1.jpg"; // make sure name matches your image
+
+function App() {
+  return (
+    <div>
+      <h1 style={{ textAlign: "center" }}>My Image Carousel</h1>
+      <ImageCarousel image={c1} />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
 
 ## OUTPUT
+<img width="1869" height="963" alt="image" src="https://github.com/user-attachments/assets/79a06947-38c6-4023-908f-81721268f159" />
+
 
 
 ## RESULT
